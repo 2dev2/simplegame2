@@ -38,6 +38,8 @@
 
 
     vm.resetMatrixCell = function(obj){
+      if(predefinedChance==0)
+        return;
           obj.color = 'old'
       randomNumberGeneration.modifyCell(obj);
       rand = angular.copy(randomNumberGeneration.getList())
@@ -57,7 +59,7 @@
         vm.timerObject.timerComplete = true;
         vm.timerObject.clickOnStartButton = false;
         $scope.$digest()
-         console.log('Timer Stopped - data = ', data,event);
+         // console.log('Timer Stopped - data = ', data,event);
         if((rand && rand.length==0)||(!rand)){
           vm.showStausOfGame = true
           $state.go('startGamePage.gameOver')
