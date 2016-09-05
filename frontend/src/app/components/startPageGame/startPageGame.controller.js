@@ -6,10 +6,15 @@
     .controller('startGameController', startGameController);
 
   /** @ngInject */
-  function startGameController($scope,$timeout, webDevTec,randomNumberGeneration,generateListOfObject,$state) {
+  function startGameController($scope,$timeout, webDevTec,randomNumberGeneration,generateListOfObject,$state,$stateParams) {
      var vm = this;
+
+     var numberOfCountDownSeconds = $stateParams.settings.numberOfCountDownSeconds,
+     numberOfRandomCell = $stateParams.settings.numberOfRandomCell,
+     numberOfRow = $stateParams.settings.numberOfRow
+     vm.numberOfCountDownSeconds = numberOfCountDownSeconds
     //generate matrix and timer object
-    generateListOfObject.generateMatrix(7)
+    generateListOfObject.generateMatrix(numberOfRow)
     vm.mat = generateListOfObject.getMatrix()
     vm.row = generateListOfObject.getRow()
 
@@ -22,9 +27,9 @@
      vm.hideResumeButton = false
       //generate random number matrix cell
       if(rand)
-        randomNumberGeneration.generateRandomList(6,6,rand)
+        randomNumberGeneration.generateRandomList(numberOfRandomCell,numberOfRow,rand)
       else
-        randomNumberGeneration.generateRandomList(6,6)
+        randomNumberGeneration.generateRandomList(numberOfRandomCell,numberOfRow)
       rand = angular.copy(randomNumberGeneration.getList())
       //change randomly generated cell color
 
@@ -46,7 +51,7 @@
       if((rand && rand.length==0)||(!rand)){
          vm.timerObject.clickOnStartButton = false;
          vm.showStausOfGame = true
-         vm.statusOfGame = "You win the game"
+         vm.statusOfGame = "You won !"
         $state.go('startGamePage.gameOver')
       }
     }
@@ -68,14 +73,14 @@
         else if(predefinedChance==0){
           // alert('Sorry  you lose')
           vm.showStausOfGame = true
-          vm.statusOfGame = "You lose the game"
+          vm.statusOfGame = "You lose !"
           $state.go('startGamePage.gameOver')
           // alert('game over')
         }
         else{
           // vm.hideResumeButton = true;
            vm.showStausOfGame = true
-          vm.statusOfGame = "You are in trying mode"
+          vm.statusOfGame = "Your remaining chance "+ predefinedChance
           if (window.confirm("Do you  want to try again?")) { 
             $state.go('startGamePage.retryGame') 
             vm.startGame()

@@ -1,11 +1,11 @@
 <div class="extra_padding">
 
 <div  ng-show="gameCtrl.showStausOfGame" class="align_text_in_block">
-<h1 ng-bind="gameCtrl.statusOfGame" >
+<h1 	ng-bind="gameCtrl.statusOfGame" >
 </h1>
 </div>
 
-  <timer-countdown count-down-time="16" timer-object="gameCtrl.timerObject" ng-if="gameCtrl.timerObject.clickOnStartButton" timer-passed='gameCtrl.timerObject.timer1'>
+  <timer-countdown count-down-time="gameCtrl.numberOfCountDownSeconds" timer-object="gameCtrl.timerObject" ng-if="gameCtrl.timerObject.clickOnStartButton" timer-passed='gameCtrl.timerObject.timer1'>
   </timer-countdown>
 
 

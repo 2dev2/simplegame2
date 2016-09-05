@@ -25,9 +25,9 @@
         templateUrl: 'app/components/startPageGame/startPageGame.html',
         controller: 'startGameController',
         controllerAs: 'gameCtrl',
-         // params: {
-         //    timerObject: { clickOnStartButton: true }
-         //  }
+         params: {
+            settings: {}
+          }
       })
       .state('startGamePage.gameOver', {
         // url: 'Game',
