@@ -62,13 +62,14 @@
           // alert("you win the game")
         }
         else if(predefinedChance==0){
+          alert('sorry  you lose')
           $state.go('home.startGamePage.gameOver')
           // alert('game over')
         }
         else{
           vm.hideResumeButton = true;
 
-          if (window.confirm("Do you  want to get chance")) { 
+          if (window.confirm("Do you  want to try Again")) { 
             $state.go('home.startGamePage.retryGame') 
             vm.startGame()
           }

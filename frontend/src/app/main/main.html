@@ -4,8 +4,10 @@
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
     <div>
     <div>
+    <div ng-show = "main.showHomeButton">
     <button type="button" ng-click="main.startGame()" class="btn btn-info">{{main.gameStartText||'start Game'}}</button>
     <button type="button" ng-show="main.showSttingOptionsButton" ng-click="main.showSttingOptions = !main.showSttingOptions" class="btn btn-info">game setting</button>
+    </div>
 
 
     <form ng-show="main.showSttingOptions" ng-submit="main.changeSetting">

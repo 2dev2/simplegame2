@@ -11,7 +11,9 @@
     vm.showSttingOptionsButton = true
     vm.showSttingOptions = false
     var setting;
+    vm.showHomeButton = true
     vm.startGame = function(){
+      // vm.showHomeButton = false;
       $state.go('home.startGamePage')
       console.log("start Game Page")
     }
