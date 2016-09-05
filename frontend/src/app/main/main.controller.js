@@ -23,9 +23,9 @@
     }
 
     vm.changeSettings = function(numberOfRow,numberOfCountDownSeconds,numberOfRandomCell){
-      setting.numberOfRow = numberOfRow || setting.numberOfRow ;
-      setting.numberOfCountDownSeconds = numberOfCountDownSeconds || setting.numberOfCountDownSeconds;
-      setting.numberOfRandomCell = numberOfRandomCell ||setting.numberOfRandomCell
+      setting.numberOfRow = +numberOfRow || +setting.numberOfRow ;
+      setting.numberOfCountDownSeconds = +numberOfCountDownSeconds || +setting.numberOfCountDownSeconds;
+      setting.numberOfRandomCell = +numberOfRandomCell || +setting.numberOfRandomCell
       // console.log('change setting',setting)  
     }
 
