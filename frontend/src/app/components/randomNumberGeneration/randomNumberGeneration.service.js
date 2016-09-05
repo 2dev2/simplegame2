@@ -58,12 +58,7 @@
         if(randomHashTable.hasOwnProperty(key))
           continue;
         randomlyUniqList.push(temp)
-        randomHashTable[key] = true;
-          
-
-        
-
-        
+        randomHashTable[key] = true; 
       }
     }
 

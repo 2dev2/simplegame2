@@ -20,8 +20,8 @@
         controllerAs: 'main',
         // abstract:true
       })
-      .state('home.startGamePage', {
-        url: 'Game',
+      .state('startGamePage', {
+        url: '/Game',
         templateUrl: 'app/components/startPageGame/startPageGame.html',
         controller: 'startGameController',
         controllerAs: 'gameCtrl',
@@ -29,13 +29,13 @@
          //    timerObject: { clickOnStartButton: true }
          //  }
       })
-      .state('home.startGamePage.gameOver', {
+      .state('startGamePage.gameOver', {
         // url: 'Game',
         templateUrl: 'app/components/gameOver/gameOver.html',
         controller: 'gameOverController',
         controllerAs: 'gameOverCtrl',
       })
-       .state('home.startGamePage.retryGame', {
+       .state('startGamePage.retryGame', {
         // url: 'Game',
         templateUrl: 'app/components/retryGame/retryGame.html',
         controller: 'retryGameController',

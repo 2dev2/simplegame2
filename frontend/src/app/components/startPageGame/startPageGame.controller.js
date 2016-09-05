@@ -43,8 +43,9 @@
       rand = angular.copy(randomNumberGeneration.getList())
       if((rand && rand.length==0)||(!rand)){
          vm.timerObject.clickOnStartButton = false;
-        alert("you win the game")
-        $state.go('home.startGamePage.gameOver')
+         vm.showStausOfGame = true
+         vm.statusOfGame = "You win the game"
+        $state.go('startGamePage.gameOver')
       }
     }
 
@@ -58,19 +59,23 @@
         $scope.$digest()
          console.log('Timer Stopped - data = ', data,event);
         if((rand && rand.length==0)||(!rand)){
-          $state.go('home.startGamePage.gameOver')
+          vm.showStausOfGame = true
+          $state.go('startGamePage.gameOver')
           // alert("you win the game")
         }
         else if(predefinedChance==0){
-          alert('sorry  you lose')
-          $state.go('home.startGamePage.gameOver')
+          // alert('Sorry  you lose')
+          vm.showStausOfGame = true
+          vm.statusOfGame = "You lose the game"
+          $state.go('startGamePage.gameOver')
           // alert('game over')
         }
         else{
-          vm.hideResumeButton = true;
-
-          if (window.confirm("Do you  want to try Again")) { 
-            $state.go('home.startGamePage.retryGame') 
+          // vm.hideResumeButton = true;
+           vm.showStausOfGame = true
+          vm.statusOfGame = "You are in trying mode"
+          if (window.confirm("Do you  want to try again?")) { 
+            $state.go('startGamePage.retryGame') 
             vm.startGame()
           }
           else
