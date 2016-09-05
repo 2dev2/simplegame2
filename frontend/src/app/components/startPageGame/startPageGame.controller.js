@@ -11,7 +11,8 @@
 
      var numberOfCountDownSeconds = $stateParams.settings.numberOfCountDownSeconds,
      numberOfRandomCell = $stateParams.settings.numberOfRandomCell,
-     numberOfRow = $stateParams.settings.numberOfRow
+     numberOfRow = $stateParams.settings.numberOfRow,
+     numberOfChances = $stateParams.settings.numberOfChances
      vm.numberOfCountDownSeconds = numberOfCountDownSeconds
     //generate matrix and timer object
     generateListOfObject.generateMatrix(numberOfRow)
@@ -19,7 +20,7 @@
     vm.row = generateListOfObject.getRow()
 
     vm.timerObject = {timerComplete:false,timer1:{}}
-    var predefinedChance = 3;
+    var predefinedChance = numberOfChances;
 
     var rand = []
     vm.startGame = function(){

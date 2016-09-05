@@ -21,7 +21,10 @@
       <label for="rand">Number of randomly generated colored cell </label>
       <input type="text" class="form-control" id="rand" placeholder="number of generated colored cell in integer"  ng-model="main.s.numberOfRandomCell">
 
-    <button  class="btn btn-default" ng-click="main.changeSettings(main.s.numberOfRow,main.s.numberOfCountDownSeconds,main.s.numberOfRandomCell)">Submit</button>
+      <label for="chance">Number of chance </label>
+      <input type="text" class="form-control" id="chance" placeholder="number of generated colored cell in integer"  ng-model="main.s.numberOfChances">
+
+    <button  class="btn btn-default" ng-click="main.changeSettings(main.s.numberOfRow,main.s.numberOfCountDownSeconds,main.s.numberOfRandomCell,main.s.numberOfChances)">Submit</button>
   </div>
 
   </div>
