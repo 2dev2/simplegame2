@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    <div>
+    <div>
+    <button type="button" ng-click="main.startGame()" class="btn btn-info">{{main.gameStartText||'start Game'}}</button>
+    <button type="button" ng-show="main.showSttingOptionsButton" ng-click="main.showSttingOptions = !main.showSttingOptions" class="btn btn-info">game setting</button>
+
+
+    <form ng-show="main.showSttingOptions" ng-submit="main.changeSetting">
+    <div class="form-group">
+      <label for="email">numberOfRows</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter number of rows in integer">
+    </div>
+
+      <label for="pwd">time for countdown in second</label>
+      <input type="text" class="form-control" id="pwd" placeholder="time for countdown in second">
+
+      <label for="rand">how many randomly generated colored cell </label>
+      <input type="text" class="form-control" id="rand" placeholder="number of generated colored cell in integer">
+
+    <button type="submit" class="btn btn-default" >Submit</button>
+  </form>
+
+  </div>
+  <div ui-view>
+  </div>
+    </div>
+
+  </div>
+</div>
